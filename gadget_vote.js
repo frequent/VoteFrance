@@ -481,7 +481,7 @@
             "adresse": my_data.adresse,
             "name": my_data.nom,
             "mail": my_data.mail,
-            "web": my_data.site,
+            "site": my_data.site,
             "tel": my_data.tel_affichage,
             "fax": my_data.tel_affichage
           });

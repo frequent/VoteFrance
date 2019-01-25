@@ -6,7 +6,7 @@
     <title>Vote Gadget</title>
 
     <link rel="stylesheet" href="lib/material_design_lite.1.3.0.min.css" />
-    <link rel="stylesheet" href="gadget_vote.min.css" />
+    <link rel="stylesheet" href="gadget_vote.css" />
 
     <script src="lib/material_design_lite.1.3.0.min.js"></script>
 
@@ -86,7 +86,7 @@
           </form>
         </div>
         </form>
-        <div class="mdl-card__menu">
+        <div class="mdl-card__menu vote-dialog-close">
           <form name="vote-dialog-close" class="vote-dialog-action-form vote-dialog-close-form vote-dialog-close-top">
             <button type="submit" class="mdl-button vote-dialog-close"><i class="material-icons">close</i></button>
           </form>
@@ -109,10 +109,8 @@
     <div class="vote-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="vote-header mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <a href="https://www.votefrance.eu" class="vote-home-button" title="https://www.votefrance.eu">
-            <span class="vote-home-button-text" data-i18n="Vote in France">Vote in France</span>
-          </a>
-          <h2 class="vote-site-header"><span data-i18n="The step by step guide">The step by step guide</span>&nbsp;<span class="vote-site-header-appendix" data-i18n="for EU citizens">for EU citizens</span> </h2>
+          <span class="vote-home-button-text" data-i18n="Vote in France">Vote in France</span>
+          <h2 class="vote-site-header"><span class="vote-sub-title" data-i18n="The step by step guide">The step by step guide</span>&nbsp;<span class="vote-site-header-appendix" data-i18n="for EU citizens">for EU citizens</span> </h2>
           <div class="mdl-layout-spacer"></div>
           <!--button class="vote-homescreen-flag mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">add_to_homescreen</i>
@@ -152,7 +150,7 @@
           <img class="vote-logo" src="img/vote_france_256x256-min.png" alt="Vote in France" />
           
           <div class="vote-content-timer-wrapper">
-            <span class="vote-content-timer-title" data-i18n="Time left to register">Time left to register:</span>
+            <span class="vote-content-timer-title" data-i18n="Time left to register">Time left to apply to electoral list:</span>
             <span class="vote-content-timer">
               <span class="days"></span>&nbsp;<span class="vote-timer-large" data-i18n="days">days</span><span class="vote-timer-small" data-i18n="mini-days">d</span>
               <span class="hours"></span>&nbsp;<span class="vote-timer-large" data-i18n="hours">hours</span><span class="vote-timer-small" data-i18n="mini-hours">h</span>
@@ -161,7 +159,7 @@
             </span>    
             <div class="vote-alarm">
               <form name="vote-remind-week" class="">
-                <button type="submit" class="vote-submit-button"><i class="material-icons">alarm</i></button>
+                <button type="submit" class="vote-submit-button vote-create-alarm"><i class="material-icons">alarm</i><span class="vote-timer-large" data-i18n="Create Reminder">Create reminder</span><span class="vote-timer-small" data-i18n="Create Reminder">Create reminder</span></button>
               </form>
             </div>
           </div>
@@ -215,7 +213,7 @@
                     <span class="mdl-checkbox__label" data-i18n="Include stored Mairie (select and store below)">Include stored Mairie (select and store below)</span>
                   </label>
                 </div>
-                 <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="Create reminder">Create reminder</button>
+                 <button type="submit" class="vote-submit-button vote-stretch mdl-button mdl-js-button mdl-button--raised" data-i18n="Create reminder">Create reminder</button>
               </form>
               <form name="vote-remind-week" class="vote-submit-option">
                 <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="1 week reminder">1 week reminder</button>
@@ -230,10 +228,10 @@
             <div class="mdl-card__supporting-text">
               <p class="vote-card-text" data-i18n="In order to vote you need to be registered">In order to vote you need to be registered in your local election list. To do so, the following documents are required:</p>
               <ol class="vote-numbered-list">
-                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections:</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.modernisation.gouv.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670-02 Municipal Election">Cerfa 12670-02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li>
                 <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="European Elections:">European Elections:</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.modernisation.gouv.fr/gf/cerfa_12671.do" title="French Government Forms - Cerfa 12671-02 European Elections">Cerfa 12671-02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16025">service-public.fr</a><span class="vote-card-text">)</span></li>
+                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections:</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.modernisation.gouv.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670-02 Municipal Election">Cerfa 12670-02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li>
                 <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Identification - Passport, Identity Card or residence permit">Identification - Passport, Identity Card or residence permit</span></li>
-                <li class="vote-numbered-list-item"><a class="vote-card-link" href="https://absolutely-french.eu/what-is-a-justificatif-de-domicile/?lang=en" data-i18n="Justicatif de Domile">Justicatif de Domile</a>&nbsp;<span class="vote-card-text">-</span>&nbsp;<span class="vote-card-text" data-i18n="a document verifiying your address such as a recent">a document verifiying your address such as a recent</span><a class="vote-card-link" href="resources/example_justicatif-de-domicile.png" target="_blank" data-i18n="electricity bill on your name">electricity bill on your name</a>.&nbsp;<span class="vote-card-text" data-i18n="If the electricity bill">If the electricity bill is on another person's name, you can also use a copy of that person's passport, his electricity bill and a</span>&nbsp;<a class="vote-card-link" href="resources/example_attestation_d_honneur.pdf" target="_blank" data-i18n="declaration of honor">declaration of honor</a>&nbsp;<span class="vote-card-text">, </span><span class="vote-card-text" data-i18n="in which this person states, you are living with her or him.">in which this person states, you are living with her or him.</span></li>
+                <li class="vote-numbered-list-item"><a class="vote-card-link" href="https://absolutely-french.eu/what-is-a-justificatif-de-domicile/?lang=en" data-i18n="Justicatif de Domile">Justicatif de Domile</a>&nbsp;<span class="vote-card-text">-</span>&nbsp;<span class="vote-card-text" data-i18n="a document verifiying your address such as a recent">a document verifiying your address such as a recent</span>&nbsp;<a class="vote-card-link" href="resources/example_justicatif-de-domicile.png" target="_blank" data-i18n="electricity bill on your name">electricity bill on your name</a>.&nbsp;<span class="vote-card-text" data-i18n="If the electricity bill">If the electricity bill is on another person's name, you can also use a copy of that person's passport, his electricity bill and a</span>&nbsp;<a class="vote-card-link" href="resources/example_attestation_d_honneur.pdf" target="_blank" data-i18n="declaration of honor">declaration of honor</a>&nbsp;<span class="vote-card-text">, </span><span class="vote-card-text" data-i18n="in which this person states, you are living with her or him.">in which this person states, you are living with her or him.</span></li>
               </ol>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" title="French online public services - citzen rights - elections" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-i18n="More info">More info</a>
