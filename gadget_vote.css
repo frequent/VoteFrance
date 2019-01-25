@@ -124,7 +124,10 @@
   background-color: rgb(238,293,246);
 }
 .vote-page-content {
-  background-color: #ffffff;
+  background-color: #2C4251;
+}
+.mdl-card__supporting-text {
+  color: #2C4251;
 }
 /* ============================= HEADER ====================================== */
 .vote-home-button {
@@ -161,7 +164,11 @@
 }    
 @media only screen and (max-width: 32em) {
   .vote-site-header {
-    font-size: 1.25em;
+    position: absolute !important;
+  	height: 1px;
+  	width: 1px;
+  	overflow: hidden;
+  	clip: rect(1px,1px,1px,1px);
   }
 }
 @media only screen and (max-width: 48em) {
@@ -188,6 +195,11 @@
   padding: 1em;
   background: rgba(255,255,255,.5);
 }
+@media only screen and (max-width: 32em) {
+  .vote-background .vote-logo {
+    margin: 1em auto 1em;
+  }
+}
 .vote-content-timer-wrapper {
   font-family: source_sans_proregular, arial, sans-serif;
   color: #2C4251;
@@ -195,6 +207,10 @@
 }
 .vote-content-timer-title {
   font-family: source_sans_probold, arial, sans-serif;
+}
+.vote-content-timer-title {
+  display: block;
+  padding-bottom: .25em;
 }
 .vote-content-header,
 .vote-content-subheader {
@@ -223,7 +239,7 @@
 }
 .vote-content-intro {
   max-width: 60%;
-  margin: 2em auto 1em;
+  margin: 1em auto 1em;
 }
 .vote-content-timer-wrapper {
   font-size: 2em;
@@ -231,15 +247,46 @@
   margin-bottom: 2em;
   padding: .5em 0;
 }
+.vote-alarm .vote-create-alarm {
+  color: #2C4251;
+}
+.vote-alarm .vote-create-alarm .vote-timer-small,
+.vote-alarm .vote-create-alarm .vote-timer-large {
+  font-family: source_sans_proregular, arial, sans-serif;
+  font-size: 1.25em;
+}
+.vote-alarm .vote-create-alarm .vote-timer-small,
+.vote-alarm .vote-create-alarm .vote-timer-large,
+.vote-alarm .vote-create-alarm .material-icons {
+  display: inline-block;
+  vertical-align: middle;
+}
+.vote-alarm .vote-create-alarm .vote-timer-small {
+  display: none;
+}
+
 @media only screen and (max-width: 48em) {
+  .vote-sub-title {
+    padding-left: .25em;
+  }
+  .vote-content-intro-wrapper {
+    margin: 0 5% 0;
+    width: auto
+  }
   .vote-content-timer-title {
-    display: block;
-    padding-bottom: .25em;
+    line-height: 1em;
+    margin-left: .25em;
+    margin-right: .25em;
+  }
+  .vote-alarm {
+    position: relative;
+    top: -.16em;
+    padding-top: 0;
   }
   .vote-content-intro {
     max-width: none;
     margin: 0 1em;
-    font-size: 1.25em;
+    font-size: 1em;
   }
   .vote-background {
     background-image: url("img/john-towner-125993-unsplash-640-min.png");
@@ -259,6 +306,23 @@
   }
 }
 @media only screen and (max-width: 32em) {
+  .vote-alarm .vote-create-alarm .vote-timer-small {
+    display: inline-block;
+  }
+  .vote-alarm .vote-create-alarm .vote-timer-large {
+    display: none;
+  }
+  .vote-content-timer-wrapper {
+    font-size: 1.75em;
+    line-height: 1.2em;
+  }
+  .vote-content-intro-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .vote-alarm {
+    margin-top: .25em;
+  }
   .vote-site-header-appendix {
     display: none;
   }
@@ -296,18 +360,20 @@
 }
 .vote-alarm {
   display: inline-block;
+  padding-top: .25em;
 }
 .vote-alarm .vote-submit-button {
   background: 0 none;
   border: 0 none;
   cursor: pointer;
 }
+
 /* =============================== FORMS ==================================== */
 .vote-content-section {
   text-align: center;
-  column-count: 2;
+  /* column-count: 2; */
   width: 65%;
-  margin: 0 auto;
+  margin: .75em auto 0;
 }
 .vote-card {
   display: inline-block;
@@ -319,7 +385,7 @@
 @media only screen and (max-width: 48em) {
   .vote-content-section {
     width: 100%;
-    column-count: auto;
+    /* column-count: auto; */
   }
   .vote-card {
     width: 90%;
@@ -327,7 +393,7 @@
 }
 @media only screen and (max-width: 32em) {
   .vote-card {
-    margin: 0;
+    margin: 1em 0;
     width: 100%;
   }
 }
@@ -380,6 +446,25 @@
 .vote-checkbox-wrapper {
   margin: 0 0 1em 0;
 }
+@media only screen and (max-width: 32em) {
+  .vote-checkbox-wrapper {
+    margin: 0 0 2.5em 0;
+  }
+  .vote-stretch {
+    width: 100%;
+  }
+  .vote-submit-option {
+    float: none;
+    margin-top: .5em;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .vote-submit-option .vote-submit-button,
+  .vote-remind-custom .vote-submit-button {
+    width: 100%;
+  }
+}
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
     border: 2px solid #2C4251;
 }
@@ -417,6 +502,11 @@
   text-align: right;
   padding: 1.25em 0;
   vertical-align: middle;
+}
+@media only screen and (max-width: 32em) {
+  .vote-clear-form {
+    margin-top: 0;
+  }
 }
 .vote-mairie-form {
   display: inline-block;
@@ -481,6 +571,9 @@
   /*min-height: calc(100% + 100px);*/
   min-height: 50%;
 }
+.vote-dialog-close .vote-dialog-close-text {
+  display: none;
+}
 @media only screen and (max-width: 48em) {
   .vote-dialog-active {
     width: 80%;
@@ -491,6 +584,13 @@
   } 
 }
 @media only screen and (max-width: 32em) {
+  .vote-dialog-close {
+    top: initial;
+    bottom: .5em;
+  }
+  .vote-dialog-close .vote-dialog-close-text {
+    display: inline;
+  }
   .vote-dialog-active {
     width: auto;
     margin: 0 2em;
@@ -526,6 +626,19 @@
   display: inline-block;
   vertical-align: top;
   width: 49%;
+}
+
+@media only screen and (max-width: 48em) {
+  .vote-card-dialog .vote-card-text,
+  .vote-card-dialog .vote-card-mini-text {
+    word-break: break-all;    
+  }
+  .vote-card-list {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 }
 .vote-card-list .mdl-list__item--two-line {
   height: 84px;
