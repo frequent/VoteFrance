@@ -646,6 +646,10 @@
 .vote-card-list .mdl-list__item-avatar, .mdl-list__item-avatar.material-icons.vote-list-icon {
   margin-bottom: 2em;
 }
+.vote-publisher {
+  max-width: 3em;
+  margin-top: -5px;
+}
 /* ========================== TRANSLATION =================================== */
 /* https://www.flag-sprites.com/ select flags, check network tab for image */
 .vote-select-language .mdl-menu__container {

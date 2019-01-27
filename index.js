@@ -8,7 +8,8 @@
   /////////////////////////////
   var OPTION_DICT = {};
   var URL = "https://www.votefrance.eu/";
-  
+  var TITLE = "Deadline to sign up on electoral list for EU elections";
+
   /////////////////////////////
   // methods
   /////////////////////////////
@@ -52,7 +53,7 @@
         tag.textContent = dictionary[tag.getAttribute('data-i18n')];
       }
       // Sonderlocke
-      //gadget.element.querySelector('[data-i19n]').setAttribute("href", dictionary[URL]);
+      gadget.element.querySelector('[data-i19n]').setAttribute("value", dictionary[TITLE]);
     })
 
     /////////////////////////////
