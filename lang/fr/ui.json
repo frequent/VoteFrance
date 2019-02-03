@@ -13,6 +13,8 @@
  "German": "Allemand",
  "English": "Anglais",
  "French": "Français",
+ "Spanish": "Espagnol",
+ "Danish": "Danoise",
  "Time left to register": "Temps restant pour s'inscrire sur les listes électorales:",
  "EU citizen living in France?": "Vous êtes un citoyen de l'UE et vous vivez en France ?",
  "The freedom to move and live anywhere": "La liberté de circuler et de vivre n'importe où en Europe ne doit pas être considérée comme un acquis. Nous vous encourageons à participer aux prochaines élections européennes et municipales. Ce guide vous montrera comment faire.",
@@ -65,5 +67,6 @@
  "Email": "Email",
  "Website": "Site internet",
  "Store location": "Store location",
- "Deadline to sign up on electoral list for EU elections": "Date limite pour s'enregistrer sur les listes électorales - https://www.votefrance.eu" 
+ "Deadline to sign up on electoral list for EU elections": "Date limite pour s'enregistrer sur les listes électorales - https://www.votefrance.eu",
+ "French citizens abroad": "Vote d'un Français domicilié à l'étranger"
 }

@@ -13,6 +13,8 @@
  "German": "German",
  "English": "English",
  "French": "French",
+ "Spanish": "Spanish",
+ "Danish": "Danish",
  "Time left to register": "Time left to apply to electoral list:",
  "EU citizen living in France?": "EU citizen living in France?",
  "The freedom to move and live anywhere": "The freedom to move or live and work anywhere in Europe should not be taken for granted. Please participate in the upcoming European and municipal elections. This guide will show you how.",
@@ -65,5 +67,6 @@
  "Email": "Email",
  "Website": "Website",
  "Store location": "Store location",
- "Deadline to sign up on electoral list for EU elections": "Deadline European election signup - https://www.votefrance.eu" 
+ "Deadline to sign up on electoral list for EU elections": "Deadline European election signup - https://www.votefrance.eu",
+ "French citizens abroad": "Information for French citizens living abroad"
 }
