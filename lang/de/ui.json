@@ -13,6 +13,8 @@
  "German": "Deutsch",
  "English": "Englisch",
  "French": "Französisch",
+ "Spanish": "Spanisch",
+ "Danish": "Dänisch",
  "Time left to register": "Verbeibende Zeit zur Anmeldung im Wählerverzeichnis:",
  "EU citizen living in France?": "Sind Sie EU Bürger und leben in Frankreich?",
  "The freedom to move and live anywhere": "Die Freiheit durch Europa zu reisen oder im europäischen Ausland zu leben und zu arbeiten sollte nicht als selbstverständlich angesehen werden. Nehmen Sie daher bitte an den bevorstehenden Europaparlamentswahlen sowie den französischen Regionalwahlen teil. Diese Anleitung zeigt Ihnen, was Sie als EU-Bürger in Frankreich tun müssen.",
@@ -65,5 +67,6 @@
  "Email": "Email",
  "Website": "Webseite",
  "Store location": "Ort abspeichern",
- "Deadline to sign up on electoral list for EU elections": "Anmeldeschluss Europaparlamentswahlen - https://www.votefrance.eu"
+ "Deadline to sign up on electoral list for EU elections": "Anmeldeschluss Europaparlamentswahlen - https://www.votefrance.eu",
+ "French citizens abroad": "Informationen für Französische Bürger im EU Ausland"
 }
