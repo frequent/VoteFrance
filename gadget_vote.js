@@ -110,7 +110,6 @@
     ARR.slice.call(faux_element.children).forEach(function (element) {
       my_node.appendChild(element);
     });
-    console.log(my_node)
   }
 
   function getLang(nav) {
@@ -121,8 +120,8 @@
     return {
       "type": "vote_storage",
       "repo": "VoteFrance",
-      "path": "lang/" + my_language,
-      "__debug": "https://softinst103163.host.vifib.net/vote/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language
+      //"__debug": "https://softinst103163.host.vifib.net/vote/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -284,7 +283,6 @@
           if (response.nhits > 10) {
             gadget.state.next_page_token = dict.search_length + 1;
           }
-          console.log("building")
           return gadget.buildResultList();
         })
         .push(function () {
