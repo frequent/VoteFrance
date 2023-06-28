@@ -181,7 +181,7 @@
   display: none;
 }
 .vote-background {
-  background-image: url("img/john-towner-125993-unsplash-min.png");
+  background-image: url("img/FR-Image-Vision-of-Europe.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -289,7 +289,7 @@
     font-size: 1em;
   }
   .vote-background {
-    background-image: url("img/john-towner-125993-unsplash-640-min.png");
+    background-image: url("img/FR-Image-Vision-of-Europe.jpg");
     background-size: contain;
   }
   .vote-timer-large {
