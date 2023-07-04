@@ -44,7 +44,7 @@
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">location_on</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Adress">Adresse</span>
-                <span class="vote-card-text"><a href="https://www.google.com/maps?q={lat},{lng}" target="_blank">{adresse}</a></span>
+                <span class="vote-card-text"><a href="https://www.google.com/maps?q={lat},{lng}" target="_blank" rel="noopener noreferrer">{adresse}</a></span>
               </span>
             </li>
             <li class="mdl-list__item">
@@ -117,7 +117,7 @@
             <i class="material-icons">add_to_homescreen</i>
           </button-->
           <!--form name="frube-open-menu-->
-          <button id="vote-open-menu" class="vote-header-button mdl-button mdl-js-button mdl-button--icon">
+          <button aria-label="Languages" id="vote-open-menu" class="vote-header-button mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">language</i>
           </button>
           <!--/form-->
@@ -126,196 +126,196 @@
               <form name="vote-select-language" class="vote-select-language">
                 <i class="vote-lang vote-lang_at"></i>
                 <input type="hidden" name="vote_language" value="de" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Austria">Austria</button>
+                <button aria-label="Austria" type="submit" class="mdl-button mdl-js-button" data-i18n="Austria">Austria</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_be"></i>
                 <input type="hidden" name="vote_language" value="be" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Belgium" disabled>Belgium</button>
+                <button aria-label="Belgium" type="submit" class="mdl-button mdl-js-button" data-i18n="Belgium" disabled>Belgium</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_bg"></i>
                 <input type="hidden" name="vote_language" value="bg" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Bulgaria" disabled>Bulgaria</button>
+                <button aria-label="Bulgaria" type="submit" class="mdl-button mdl-js-button" data-i18n="Bulgaria" disabled>Bulgaria</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_cz"></i>
                 <input type="hidden" name="vote_language" value="cz" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Czech Republic" disabled>Czechia</button>
+                <button aria-label="Czechia" type="submit" class="mdl-button mdl-js-button" data-i18n="Czech Republic" disabled>Czechia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_hr"></i>
                 <input type="hidden" name="vote_language" value="hr" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Croatia" disabled>Croatia</button>
+                <button aria-label="Croatia" type="submit" class="mdl-button mdl-js-button" data-i18n="Croatia" disabled>Croatia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_cy"></i>
                 <input type="hidden" name="vote_language" value="gr" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Cyprus" disabled>Cyprus</button>
+                <button aria-label="Cyprus" type="submit" class="mdl-button mdl-js-button" data-i18n="Cyprus" disabled>Cyprus</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_dk"></i>
                 <input type="hidden" name="vote_language" value="dk" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Denmark" disabled>Denmark</button>
+                <button aria-label="Denmark" type="submit" class="mdl-button mdl-js-button" data-i18n="Denmark" disabled>Denmark</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_ee"></i>
                 <input type="hidden" name="vote_language" value="ee" />
-                <button type="submit" class="mdl-button mdl-js-button" disabled data-i18n="Estonia">Estonia</button>
+                <button aria-label="Estonia" type="submit" class="mdl-button mdl-js-button" disabled data-i18n="Estonia">Estonia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_fi"></i>
                 <input type="hidden" name="vote_language" value="fi" />
-                <button type="submit" class="mdl-button mdl-js-button" disabled data-i18n="Finland">Finland</button>
+                <button aria-label="Finland" type="submit" class="mdl-button mdl-js-button" disabled data-i18n="Finland">Finland</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language">
                 <i class="vote-lang vote-lang_fr"></i>
                 <input type="hidden" name="vote_language" value="fr" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="France">France</button>
+                <button aria-label="France" type="submit" class="mdl-button mdl-js-button" data-i18n="France">France</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language">
                 <i class="vote-lang vote-lang_de"></i>
                 <input type="hidden" name="vote_language" value="de" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Germany">Germany</button>
+                <button aria-label="Germany" type="submit" class="mdl-button mdl-js-button" data-i18n="Germany">Germany</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_gr"></i>
                 <input type="hidden" name="vote_language" value="gr" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Greece" disabled>Greece</button>
+                <button aria-label="Greece" type="submit" class="mdl-button mdl-js-button" data-i18n="Greece" disabled>Greece</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_hu"></i>
                 <input type="hidden" name="vote_language" value="hu" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Hungary" disabled>Hungary</button>
+                <button aria-label="Hungary" type="submit" class="mdl-button mdl-js-button" data-i18n="Hungary" disabled>Hungary</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_ie"></i>
                 <input type="hidden" name="vote_language" value="ie" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Ireland" disabled>Ireland</button>
+                <button aria-label="Ireland" type="submit" class="mdl-button mdl-js-button" data-i18n="Ireland" disabled>Ireland</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_it"></i>
                 <input type="hidden" name="vote_language" value="it" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Italy" disabled>Italy</button>
+                <button aria-label="Italy" type="submit" class="mdl-button mdl-js-button" data-i18n="Italy" disabled>Italy</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_lv"></i>
                 <input type="hidden" name="vote_language" value="lv" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Latvia" disabled>Latvia</button>
+                <button aria-label="Latvia" type="submit" class="mdl-button mdl-js-button" data-i18n="Latvia" disabled>Latvia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_lt"></i>
                 <input type="hidden" name="vote_language" value="lt" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Lithuania" disabled>Lithuania</button>
+                <button aria-label="Lithuania" type="submit" class="mdl-button mdl-js-button" data-i18n="Lithuania" disabled>Lithuania</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_lu"></i>
                 <input type="hidden" name="vote_language" value="lu" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Luxembourg" disabled>Luxembourg</button>
+                <button aria-label="Luxembourg" type="submit" class="mdl-button mdl-js-button" data-i18n="Luxembourg" disabled>Luxembourg</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_mt"></i>
                 <input type="hidden" name="vote_language" value="mt" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Malta" disabled>Malta</button>
+                <button aria-label="Malta" type="submit" class="mdl-button mdl-js-button" data-i18n="Malta" disabled>Malta</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_nl"></i>
                 <input type="hidden" name="vote_language" value="nl" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Netherlands" disabled>Netherlands</button>
+                <button aria-label="Netherlands" type="submit" class="mdl-button mdl-js-button" data-i18n="Netherlands" disabled>Netherlands</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_pl"></i>
                 <input type="hidden" name="vote_language" value="pl" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Poland" disabled>Poland</button>
+                <button aria-label="Poland" type="submit" class="mdl-button mdl-js-button" data-i18n="Poland" disabled>Poland</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_pt"></i>
                 <input type="hidden" name="vote_language" value="pt" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Portugal" disabled>Portugal</button>
+                <button aria-label="Portugal" type="submit" class="mdl-button mdl-js-button" data-i18n="Portugal" disabled>Portugal</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_ro"></i>
                 <input type="hidden" name="vote_language" value="ro" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Romania" disabled>Romania</button>
+                <button aria-label="Romania" type="submit" class="mdl-button mdl-js-button" data-i18n="Romania" disabled>Romania</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_si"></i>
                 <input type="hidden" name="vote_language" value="si" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Slovenia" disabled>Slovenia</button>
+                <button aria-label="Slovenia" type="submit" class="mdl-button mdl-js-button" data-i18n="Slovenia" disabled>Slovenia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_sk"></i>
                 <input type="hidden" name="vote_language" value="sk" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Slovakia" disabled>Slovakia</button>
+                <button aria-label="Slovakia" type="submit" class="mdl-button mdl-js-button" data-i18n="Slovakia" disabled>Slovakia</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_es"></i>
                 <input type="hidden" name="vote_language" value="es" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Spain" disabled>Spain</button>
+                <button aria-label="Spain" type="submit" class="mdl-button mdl-js-button" data-i18n="Spain" disabled>Spain</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language vote-disabled">
                 <i class="vote-lang vote-lang_se"></i>
                 <input type="hidden" name="vote_language" value="se" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Sweden" disabled>Sweden</button>
+                <button aria-label="Sweden" type="submit" class="mdl-button mdl-js-button" data-i18n="Sweden" disabled>Sweden</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
               <form name="vote-select-language" class="vote-select-language">
                 <i class="vote-lang vote-lang_en"></i>
                 <input type="hidden" name="vote_language" value="en" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="United Kingdom">United Kingdom</button>
+                <button aria-label="United Kingdom" type="submit" class="mdl-button mdl-js-button" data-i18n="United Kingdom">United Kingdom</button>
               </form>
             </li>
           </ul>
@@ -338,7 +338,7 @@
             </span>    
             <div class="vote-alarm">
               <form name="vote-remind-week" class="">
-                <button type="submit" class="vote-submit-button vote-create-alarm"><i class="material-icons">alarm</i><span class="vote-timer-large" data-i18n="Create Reminder">Create reminder</span><span class="vote-timer-small" data-i18n="Create Reminder">Create reminder</span></button>
+                <button aria-label="Create a reminder" type="submit" class="vote-submit-button vote-create-alarm"><i class="material-icons">alarm</i><span class="vote-timer-large" data-i18n="Create Reminder">Create reminder</span><span class="vote-timer-small" data-i18n="Create Reminder">Create reminder</span></button>
               </form>
             </div>
           </div>
@@ -366,8 +366,8 @@
               </ul>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More information</a>
-              <a href="https://www.service-public.fr/particuliers/vosdroits/F16904" target="_blank" class="mdl-button mdl-js-button mdl-button--raised vote-button-last" data-i18n="French citizens abroad">French citizens voting abroad</a>
+              <a role="button" aria-label="More information on your voting rights as EU citizen in France" href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" rel="noopener noreferrer" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More information</a>
+              <a role="button" aria-label="More information on French citizens voting abroad" href="https://www.service-public.fr/particuliers/vosdroits/F16904" target="_blank" rel="noopener noreferrer" class="mdl-button mdl-js-button mdl-button--raised vote-button-last" data-i18n="French citizens abroad">French citizens voting abroad</a>
             </div>
           </div>
 
@@ -378,15 +378,15 @@
             <div class="mdl-card__supporting-text">
               <p class="vote-card-text" data-i18n="In order to vote you need to be registered">You need to prepare the following documents:</p>
               <ol class="vote-numbered-list">
-                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="European Elections:">European Elections (2024):</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.service-public.fr/gf/cerfa_12671.do" title="French Government Forms - Cerfa 12671*02 European Elections">Cerfa 12671*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16025">service-public.fr</a><span class="vote-card-text">)</span></li>
-                <!--li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections (2026):</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.service-public.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670*02 Municipal Election">Cerfa 12670*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li-->
+                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="European Elections:">European Elections (2024):</span>&nbsp;<a class="vote-card-link" target="_blank" rel="noopener noreferrer" href="https://www.formulaires.service-public.fr/gf/cerfa_12671.do" title="French Government Forms - Cerfa 12671*02 European Elections">Cerfa 12671*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16025">service-public.fr</a><span class="vote-card-text">)</span></li>
+                <!--li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections (2026):</span>&nbsp;<a class="vote-card-link" target="_blank" rel="noopener noreferrer" href="https://www.formulaires.service-public.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670*02 Municipal Election">Cerfa 12670*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li-->
                 <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Identification - Passport, Identity Card or residence permit">Identification - Passport, Identity Card or residence permit</span></li>
-                <li class="vote-numbered-list-item"><a class="vote-card-link" href="https://absolutely-french.eu/what-is-a-justificatif-de-domicile/?lang=en" data-i18n="Justicatif de Domile">Justicatif de Domile</a>&nbsp;<span class="vote-card-text">-</span>&nbsp;<span class="vote-card-text" data-i18n="a document verifiying your address such as a recent">a document verifiying your address such as a recent</span>&nbsp;<a class="vote-card-link" href="resources/example_justicatif-de-domicile.png" target="_blank" data-i18n="electricity bill on your name">electricity bill on your name</a>.&nbsp;<span class="vote-card-text" data-i18n="If the electricity bill">If the electricity bill is on another person's name, you can also use a copy of that person's passport, his electricity bill and a</span>&nbsp;<a class="vote-card-link" href="resources/example_attestation_d_honneur.pdf" target="_blank" data-i18n="declaration of honor">declaration of honor</a>&nbsp;<span class="vote-card-text">, </span><span class="vote-card-text" data-i18n="in which this person states, you are living with her or him.">in which this person states, you are living with her or him.</span></li>
-                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="A declaration of Honor to only vote in France">A declaration of honor to only vote in France in the elections</span>&nbsp;<span class="vote-card-text">(</span><a href="https://www.service-public.fr/simulateur/calcul/DeclarationInscriptionEuropeen" target="_blank" class="vote-card-link" data-i18n="Online template">Online template to fill out</a><span class="vote-card-text">)</span></li>
+                <li class="vote-numbered-list-item"><a class="vote-card-link" href="https://absolutely-french.eu/what-is-a-justificatif-de-domicile/?lang=en" data-i18n="Justicatif de Domile">Justicatif de Domile</a>&nbsp;<span class="vote-card-text">-</span>&nbsp;<span class="vote-card-text" data-i18n="a document verifiying your address such as a recent">a document verifiying your address such as a recent</span>&nbsp;<a class="vote-card-link" href="resources/example_justicatif-de-domicile.png" target="_blank" rel="noopener noreferrer" data-i18n="electricity bill on your name">electricity bill on your name</a>.&nbsp;<span class="vote-card-text" data-i18n="If the electricity bill">If the electricity bill is on another person's name, you can also use a copy of that person's passport, his electricity bill and a</span>&nbsp;<a class="vote-card-link" href="resources/example_attestation_d_honneur.pdf" target="_blank" rel="noopener noreferrer" data-i18n="declaration of honor">declaration of honor</a>&nbsp;<span class="vote-card-text">, </span><span class="vote-card-text" data-i18n="in which this person states, you are living with her or him.">in which this person states, you are living with her or him.</span></li>
+                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="A declaration of Honor to only vote in France">A declaration of honor to only vote in France in the elections</span>&nbsp;<span class="vote-card-text">(</span><a href="https://www.service-public.fr/simulateur/calcul/DeclarationInscriptionEuropeen" target="_blank" rel="noopener noreferrer" class="vote-card-link" data-i18n="Online template">Online template to fill out</a><span class="vote-card-text">)</span></li>
               </ol>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" title="French online public services - citzen rights - elections" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More info</a>
+              <a role="button" aria-label="More information on your voting rights as EU citizen in France" href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" rel="noopener noreferrer" title="French online public services - citzen rights - elections" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More info</a>
             </div>
           </div>
 
@@ -398,7 +398,7 @@
               <p class="">
                 <span class="vote-card-text" data-i18n="It is possible to do the registration">It is possible to do the registration</span>&nbsp;
                 <span class="vote-card-text">(1)</span>&nbsp;
-                <a class="vote-card-link" target="_blank" href="https://www.inscriptionelectorale.service-public.fr/" data-i18n="online">online</a>
+                <a class="vote-card-link" target="_blank" rel="noopener noreferrer" href="https://www.inscriptionelectorale.service-public.fr/" data-i18n="online">online</a>
                 <span class="vote-card-text">,</span>&nbsp;
                 <span class="vote-card-text" data-i18n="by mail (please only send">by mail (please only send a copy of your passport) or by taking the documents to your local Mairie.</span>
               </p>
@@ -423,10 +423,10 @@
             </div>
             <div class="mdl-card__actions mdl-card--border">
               <form name="vote-load-more" class="vote-action-form">
-                <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised"><span data-i18n="Load more results">Load more results</span>&nbsp;<span class="vote-total_results"></span></button>
+                <button type="submit" aria-label="Load more results" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised"><span data-i18n="Load more results">Load more results</span>&nbsp;<span class="vote-total_results"></span></button>
               </form>
               <form name="vote-clear-list" class="vote-action-form vote-action-form-last">
-                <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="Clear list">Clear list</button>
+                <button type="submit" aria-label="Delete results" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="Clear list">Clear list</button>
               </form>
             </div>
           </div>
@@ -453,10 +453,10 @@
                     <span class="mdl-checkbox__label" data-i18n="Include stored Mairie (select and store below)">Include stored Mairie</span>
                   </label>
                 </div>
-                 <button type="submit" class="vote-submit-button vote-stretch mdl-button mdl-js-button mdl-button--raised" data-i18n="Create reminder">Create reminder</button>
+                 <button aria-label="Create a reminder" type="submit" class="vote-submit-button vote-stretch mdl-button mdl-js-button mdl-button--raised" data-i18n="Create reminder">Create reminder</button>
               </form>
               <form name="vote-remind-week" class="vote-submit-option">
-                <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="1 week reminder">1 week reminder</button>
+                <button type="submit" aria-label="Create a one week reminder" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="1 week reminder">1 week reminder</button>
               </form>
             </div>
           </div>
@@ -469,7 +469,7 @@
               <p><span class="vote-card-text" data-i18n="Are you stuck or">Are you stuck or don't know what to do? Reach out to us! This is a volunteer site, but we will try to help you sign up on the electoral list.</span></p>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a href="mailto:support@votefrance.eu?subject=Help with registering for the European elections" target="_blank" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="Contact us">Contact us</a>
+              <a role="button" aria-label="Contact support" href="mailto:support@votefrance.eu?subject=Help with registering for the European elections" target="_blank" rel="noopener noreferrer" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="Contact us">Contact us</a>
             </div>
           </div>
 
@@ -481,17 +481,17 @@
               <p class="vote-card-text" ><span data-i18n="After your registration is completed">After your registration is completed, you will receive your</span>&nbsp;<b><span data-i18n="Electoral card">Electoral card</span></b>.&nbsp;<span data-i18n="Spread the message in your network">. Spread the message in your network and ask them to register aswell. Every vote will count!</span></p>
               <p class="vote-card-text" data-i18n="If you want to share this site">If you want to share this site or a photo of your electoral card (use hashtags #votefrance #UnVotePourlEurope), you can use:</p>
               <form name="vote-share-facebook" class="vote-share-align">
-                <button type="submit" class="mdl-button vote-share-button">
+                <button aria-label="Share this page on Facebook" type="submit" class="mdl-button vote-share-button">
                   <i class="fab fa-facebook"></i>
                 </button>
               </form>
               <form name="vote-share-twitter" class="vote-share-align">
-                <button type="submit" class="mdl-button vote-share-button">
+                <button aria-label="Share this page on Twitter" type="submit" class="mdl-button vote-share-button">
                   <i class="fab fa-twitter"></i>
                 </button>
               </form>
               <form name="vote-share-linkedin" class="vote-share-align">
-                <button type="submit" class="mdl-button vote-share-button">
+                <button type="submit" aria-label="Share this page on LinkedIn" class="mdl-button vote-share-button">
                   <i class="fab fa-linkedin"></i>
                 </button>
               </form>
@@ -502,7 +502,7 @@
         <div class="vote-footer">
           <div class="vote-credits">
             <span class="" data-i18n="© 2023 - Created by">© 2023 - Created by</span>&nbsp;
-            <a class="vote-credits-link" title="Volt France, 23 Rue Jean-Jacques Rousseau, 75001 Paris, France" href="mailto:sven.franck@volteuropa.org"><img class="vote-publisher" src="img/volt.min.png" alt="Volt France" /></a>
+            <a role="button" class="vote-credits-link" title="Volt France, 23 Rue Jean-Jacques Rousseau, 75001 Paris, France" href="mailto:sven.franck@volteuropa.org"><img class="vote-publisher" src="img/volt.min.png" alt="Volt France" /></a>
             <span class="" data-i18n="hosted by">hosted by</span>&nbsp;
             <a class="vote-credits-link" href="https://github.com/frequent/VoteFrance/"><img class="vote-hoster" src="img/GitHub_Logo_White.png" alt="Github" /></a>
             <span class="">.</span>&nbsp;

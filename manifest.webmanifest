@@ -1,9 +1,9 @@
 {
-  "manifest_version": 1,
-  "version": "0.0.1",
+  "manifest_version": 2,
+  "version": "0.0.2",
   "name": "Vote in France",
   "short_name": "Vote in France",
-  "description": "The step by step guide for EU citizens living in France to participate in european and municipal elections.",
+  "description": "The step by step guide for EU citizens living in France to participate in the 2024 european elections.",
   "default_locale": "en",
   "icons": [
         {
