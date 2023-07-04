@@ -6,7 +6,7 @@
     <title>Vote Gadget</title>
 
     <link rel="stylesheet" href="lib/material_design_lite.1.3.0.min.css" />
-    <link rel="stylesheet" href="gadget_vote.min.css" />
+    <link rel="stylesheet" href="gadget_vote.css" />
 
     <script src="lib/material_design_lite.1.3.0.min.js"></script>
 
@@ -33,44 +33,42 @@
         </div>
         <div class="mdl-card__supporting-text">
           <ul class="vote-card-list mdl-list">
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">location_city</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Name">Name</span>
                 <span class="vote-card-text">{name}</span>
               </span>
             </li>
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">location_on</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Adress">Adresse</span>
-                <span class="vote-card-text">{adresse}</span>
+                <span class="vote-card-text"><a href="https://www.google.com/maps?q={lat},{lng}" target="_blank">{adresse}</a></span>
               </span>
             </li>
-          </ul>
-          <ul class="vote-card-list mdl-list">
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">email</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Email">Email</span>
                 <span class="vote-card-text">{mail}</span>
               </span>
             </li>
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">tv</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Website">Web</span>
                 <span class="vote-card-text">{site}</span>
               </span>
             </li>
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">phone</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Phone">Phone</span>
                 <span class="vote-card-text">{tel}</span>
               </span>
             </li>
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar vote-list-icon">print</i>
                 <span class="mdl-list__item-secondary-info vote-card-mini-text" data-i18n="Fax">Fax</span>
@@ -109,8 +107,11 @@
     <div class="vote-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="vote-header mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="vote-home-button-text" data-i18n="Vote in France">Vote in France</span>
-          <h2 class="vote-site-header">&nbsp;<span class="vote-sub-title" data-i18n="The step by step guide">The step by step guide</span>&nbsp;<span class="vote-site-header-appendix" data-i18n="for EU citizens">for EU citizens</span> </h2>
+          <span class="vote-home-button-text" data-i18n="Vote in France">Vote in France</span>&nbsp;
+          <h2 class="vote-site-header">
+            <span class="vote-sub-title" data-i18n="The step by step guide">The step by step guide</span>&nbsp;
+            <span class="vote-site-header-appendix" data-i18n="for EU citizens">for EU citizens</span>
+          </h2>
           <div class="mdl-layout-spacer"></div>
           <!--button class="vote-homescreen-flag mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">add_to_homescreen</i>
@@ -122,38 +123,199 @@
           <!--/form-->
           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu vote-language-menu" for="vote-open-menu">
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
-              <i class="vote-lang vote-lang_en"></i>
               <form name="vote-select-language" class="vote-select-language">
-                <input type="hidden" name="vote_language" value="en" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="English">English</button>
-              </form>
-            </li>
-            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action ">
-              <i class="vote-lang vote-lang_fr"></i>
-              <form name="vote-select-language" class="vote-select-language">
-                <input type="hidden" name="vote_language" value="fr" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="French">French</button>
-              </form>
-            </li>
-            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
-              <i class="vote-lang vote-lang_de"></i>
-              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_at"></i>
                 <input type="hidden" name="vote_language" value="de" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="German">German</button>
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Austria">Austria</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
-              <i class="vote-lang vote-lang_es"></i>
               <form name="vote-select-language" class="vote-select-language">
-                <input type="hidden" name="vote_language" value="es" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Spanish">Spanish</button>
+                <i class="vote-lang vote-lang_be"></i>
+                <input type="hidden" name="vote_language" value="fr" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Belgium">Belgium</button>
               </form>
             </li>
             <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
-              <i class="vote-lang vote-lang_dk"></i>
               <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_bg"></i>
+                <input type="hidden" name="vote_language" value="bg" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Bulgaria">Bulgaria</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_cz"></i>
+                <input type="hidden" name="vote_language" value="cz" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Czech Republic">Czechia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_hr"></i>
+                <input type="hidden" name="vote_language" value="hr" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Croatia">Croatia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_cy"></i>
+                <input type="hidden" name="vote_language" value="gr" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Cyprus">Cyprus</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_dk"></i>
                 <input type="hidden" name="vote_language" value="dk" />
-                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Danish">Danish</button>
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Denmark">Denmark</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_ee"></i>
+                <input type="hidden" name="vote_language" value="ee" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Estonia">Estonia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_fi"></i>
+                <input type="hidden" name="vote_language" value="fi" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Finland">Finland</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_fr"></i>
+                <input type="hidden" name="vote_language" value="fr" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="France">France</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_de"></i>
+                <input type="hidden" name="vote_language" value="de" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Germany">Germany</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_gr"></i>
+                <input type="hidden" name="vote_language" value="gr" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Greece">Greece</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_hu"></i>
+                <input type="hidden" name="vote_language" value="hu" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Hungary">Hungary</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_ie"></i>
+                <input type="hidden" name="vote_language" value="ie" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Ireland">Ireland</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_it"></i>
+                <input type="hidden" name="vote_language" value="it" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Italy">Italy</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_lv"></i>
+                <input type="hidden" name="vote_language" value="lv" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Latvia">Latvia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_lt"></i>
+                <input type="hidden" name="vote_language" value="lt" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Lithuania">Lithuania</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_lu"></i>
+                <input type="hidden" name="vote_language" value="lu" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Luxembourg">Luxembourg</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_mt"></i>
+                <input type="hidden" name="vote_language" value="mt" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Malta">Malta</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_nl"></i>
+                <input type="hidden" name="vote_language" value="nl" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Netherlands">Netherlands</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_pl"></i>
+                <input type="hidden" name="vote_language" value="pl" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Poland">Poland</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_pt"></i>
+                <input type="hidden" name="vote_language" value="pt" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Portugal">Portugal</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_ro"></i>
+                <input type="hidden" name="vote_language" value="ro" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Romania">Romania</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_si"></i>
+                <input type="hidden" name="vote_language" value="si" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Slovenia">Slovenia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_sk"></i>
+                <input type="hidden" name="vote_language" value="sk" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Slovakia">Slovakia</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_es"></i>
+                <input type="hidden" name="vote_language" value="es" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Spain">Spain</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_se"></i>
+                <input type="hidden" name="vote_language" value="se" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="Sweden">Sweden</button>
+              </form>
+            </li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider vote-custom-menu-action">
+              <form name="vote-select-language" class="vote-select-language">
+                <i class="vote-lang vote-lang_en"></i>
+                <input type="hidden" name="vote_language" value="en" />
+                <button type="submit" class="mdl-button mdl-js-button" data-i18n="United Kingdom">United Kingdom</button>
               </form>
             </li>
           </ul>
@@ -163,6 +325,9 @@
         <div class="vote-background">
           <img class="vote-logo" src="img/vote_france_256x256-min.png" alt="Vote in France" />
           
+          <div class="vote-content-election-wrapper">
+            <h1 class="vote-content-election-title" data-i18n="European Parliament Elections, June 9th, 2024">European Parliament Elections, June 9th, 2024</h1>
+          </div>
           <div class="vote-content-timer-wrapper">
             <span class="vote-content-timer-title" data-i18n="Time left to register">Time left to apply to electoral list:</span>
             <span class="vote-content-timer">
@@ -181,8 +346,8 @@
         </div>
         <div class="vote-content-intro-wrapper">
           <div class="vote-content-intro">
-            <h1 class="vote-content-header" data-i18n="EU citizen living in France?">EU citizen living in France?</h1>
-            <p class="vote-content-subheader" data-i18n="The freedom to move and live anywhere">The freedom to move and live anywhere in Europe should not be taken for granted. Please participate in the upcoming European and municipal elections. This guide will show you how.</p>
+            <h2 class="vote-content-header" data-i18n="Are you one of the 1.5 million">Are you one of the 1.5 million European citizens in France?</h2>
+            <p class="vote-content-subheader" data-i18n="You would represent around 7%">You would represent around 7% of voters, more than enough to ensure France will not send a majority of extreme right deputies into the European Parliament. Whether you are in France for Erasmus or for a living, it's time to make a stand for Europe and your right to live and work anywhere in Europe. Get registered and vote in France. We show you how.</p>
           </div>
         </div>
         <div class="vote-content-section">
@@ -201,26 +366,27 @@
               </ul>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a href="https://europa.eu/youreurope/citizens/residence/elections-abroad/european-elections/france/index_en.htm" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-i18n="More info">More info</a>
-              <a href="https://www.service-public.fr/particuliers/vosdroits/F16904" target="_blank" class="mdl-button mdl-button-colored mdl-js-button mdl-js-ripple-effect" data-i18n="French citizens abroad">For French citizens living abroad</a>
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More information</a>
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F16904" target="_blank" class="mdl-button mdl-js-button mdl-button--raised vote-button-last" data-i18n="French citizens abroad">French citizens voting abroad</a>
             </div>
           </div>
 
           <div class="vote-card mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text" data-i18n="3. Which documents do I need?">2. Which documents do I need?</h2>
+              <h2 class="mdl-card__title-text" data-i18n="2. What documents do I need?": "2. What documents do I need?">2. What documents do I need?</h2>
             </div>
             <div class="mdl-card__supporting-text">
-              <p class="vote-card-text" data-i18n="In order to vote you need to be registered">In order to vote you need to be registered in your local election list. To do so, the following documents are required:</p>
+              <p class="vote-card-text" data-i18n="In order to vote you need to be registered">You need to prepare the following documents:</p>
               <ol class="vote-numbered-list">
-                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="European Elections:">European Elections:</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.modernisation.gouv.fr/gf/cerfa_12671.do" title="French Government Forms - Cerfa 12671-02 European Elections">Cerfa 12671-02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16025">service-public.fr</a><span class="vote-card-text">)</span></li>
-                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections:</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.modernisation.gouv.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670-02 Municipal Election">Cerfa 12670-02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li>
+                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="European Elections:">European Elections (2024):</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.service-public.fr/gf/cerfa_12671.do" title="French Government Forms - Cerfa 12671*02 European Elections">Cerfa 12671*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16025">service-public.fr</a><span class="vote-card-text">)</span></li>
+                <!--li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Municipal Elections:">Municipal Elections (2026):</span>&nbsp;<a class="vote-card-link" target="_blank" href="https://www.formulaires.service-public.fr/gf/cerfa_12670.do" title="French Government Forms - Cerfa 12670*02 Municipal Election">Cerfa 12670*02</a> <span class="vote-card-text" data-i18n="(see">(see</span>&nbsp;<a class="vote-card-link" href="https://www.service-public.fr/particuliers/vosdroits/R16026">service-public.fr</a><span class="vote-card-text">)</span></li-->
                 <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="Identification - Passport, Identity Card or residence permit">Identification - Passport, Identity Card or residence permit</span></li>
                 <li class="vote-numbered-list-item"><a class="vote-card-link" href="https://absolutely-french.eu/what-is-a-justificatif-de-domicile/?lang=en" data-i18n="Justicatif de Domile">Justicatif de Domile</a>&nbsp;<span class="vote-card-text">-</span>&nbsp;<span class="vote-card-text" data-i18n="a document verifiying your address such as a recent">a document verifiying your address such as a recent</span>&nbsp;<a class="vote-card-link" href="resources/example_justicatif-de-domicile.png" target="_blank" data-i18n="electricity bill on your name">electricity bill on your name</a>.&nbsp;<span class="vote-card-text" data-i18n="If the electricity bill">If the electricity bill is on another person's name, you can also use a copy of that person's passport, his electricity bill and a</span>&nbsp;<a class="vote-card-link" href="resources/example_attestation_d_honneur.pdf" target="_blank" data-i18n="declaration of honor">declaration of honor</a>&nbsp;<span class="vote-card-text">, </span><span class="vote-card-text" data-i18n="in which this person states, you are living with her or him.">in which this person states, you are living with her or him.</span></li>
+                <li class="vote-numbered-list-item"><span class="vote-card-text" data-i18n="A declaration of Honor to only vote in France">A declaration of honor to only vote in France in the elections</span>&nbsp;<span class="vote-card-text">(</span><a href="https://www.service-public.fr/simulateur/calcul/DeclarationInscriptionEuropeen" target="_blank" class="vote-card-link" data-i18n="Online template">Online template to fill out</a><span class="vote-card-text">)</span></li>
               </ol>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" title="French online public services - citzen rights - elections" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-i18n="More info">More info</a>
-              </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F1937" target="_blank" title="French online public services - citzen rights - elections" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="More info">More info</a>
             </div>
           </div>
 
@@ -229,11 +395,15 @@
               <h2 class="mdl-card__title-text" data-i18n="4. Where can I register?">3. Where can I register?</h2>
             </div>
             <div class="mdl-card__supporting-text">  
-              <p class="vote-card-text-last">
+              <p class="">
                 <span class="vote-card-text" data-i18n="It is possible to do the registration">It is possible to do the registration</span>&nbsp;
-                <a class="vote-card-link" target="_blank" href="https://www.service-public.fr/compte/se-connecter" data-i18n="online">online</a>
+                <span class="vote-card-text">(1)</span>&nbsp;
+                <a class="vote-card-link" target="_blank" href="https://www.inscriptionelectorale.service-public.fr/" data-i18n="online">online</a>
                 <span class="vote-card-text">,</span>&nbsp;
-                <span class="vote-card-text" data-i18n="by mail (please only send">by mail (please only send a copy of your passport) or by taking the documents to your local Mairie. Adresses can be searched below:</span>
+                <span class="vote-card-text" data-i18n="by mail (please only send">by mail (please only send a copy of your passport) or by taking the documents to your local Mairie.</span>
+              </p>
+              <p class="vote-card-text-last">
+                <span class="vote-card-text" data-i18n="You can search for the adresse of your Mairie">You can search for the adresse of your Mairie by entering the name or postal code in the form below.</span>
               </p>
               <form name="vote-search-mairie" class="vote-mairie-form">
                 <span class="vote-card-text" data-i18n="Click to search:">Click to search:</span>&nbsp;
@@ -251,6 +421,14 @@
                 <ul class="vote-search-results mdl-list"></ul>
               </div>
             </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <form name="vote-load-more" class="vote-action-form">
+                <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised"><span data-i18n="Load more results">Load more results</span>&nbsp;<span class="vote-total_results"></span></button>
+              </form>
+              <form name="vote-clear-list" class="vote-action-form vote-action-form-last">
+                <button type="submit" class="vote-submit-button mdl-button mdl-js-button mdl-button--raised" data-i18n="Clear list">Clear list</button>
+              </form>
+            </div>
           </div>
 
           <div class="vote-card mdl-card mdl-shadow--2dp">
@@ -258,16 +436,16 @@
               <h2 class="mdl-card__title-text" data-i18n="2. Until when can I register?">4. Until when can I register?</h2>
             </div>
             <div class="mdl-card__supporting-text">
-              <p class="vote-card-text"><span data-i18n="Registration is possible until">Registration is possible until</span>&nbsp;<span class="vote-deadline" data-i18n="March 31st, 2019">March 31st, 2019</span>.&nbsp;<span data-i18n="Create a reminder (ics file) by using the form below.">Create a reminder (ics file) by using the form below.</span></p>
+              <p class="vote-card-text"><span data-i18n="Registration is possible until">Registration is possible until</span>&nbsp;<span class="vote-deadline" data-i18n="May 5th, 2024">May 5th, 2024</span><span data-i18n="but please don't wait">, but please don't wait until the last minute and risk not being accepted due to formalities.</span><span data-i18n="Create a reminder (ics file) by using the form below.">Create a reminder (ics file) by using the form below.</span></p>
               <form name="vote_remind">
                 <!--div class="mdl-textfield mdl-js-textfield"-->
-                  <input type="hidden" data-i19n="Deadline to sign up on electoral list for EU elections" value="" class="mdl-textfield__input" name="vote_remind_title" type="text" id="vote_remind_title">
+                  <input type="hidden" data-i19n="Deadline to sign up on electoral list for EU elections" value="Please sign up to vote in the European election - https://www.votefrance.eu" class="mdl-textfield__input" name="vote_remind_subject" type="text" id="vote_remind_subject">
                   <!--label class="mdl-textfield__label" for="vote_remind_title" data-i18n="Title">Title</label>
                 </div -->
                 <div class="mdl-textfield mdl-js-textfield">
-                  <input class="mdl-textfield__input" name="vote_remind_date" required max="2019-03-31" type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" id="vote_remind_date">
+                  <input class="mdl-textfield__input" name="vote_remind_date" required max="2024-05-05" type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" id="vote_remind_date">
                   <label class="mdl-textfield__label vote-override-label" for="vote_remind_date">Date</label>
-                  <span class="mdl-textfield__error" data-i18n="Invalid input, latest date is 31.03.2019!">Invalid input, latest date is 31.03.2019!</span>
+                  <span class="mdl-textfield__error" data-i18n="Invalid input, latest date is 05.05.2024!">Invalid input, latest date is 05.05.2024!</span>
                 </div>
                 <div class="vote-checkbox-wrapper">
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="vote_remind_location">
@@ -285,10 +463,23 @@
 
           <div class="vote-card mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text" data-i18n="5. What else can I do?">5. What else can I do?</h2>
+              <h2 class="mdl-card__title-text" data-i18n="6. Do you need help?">5. Do you need help?</h2>
             </div>
             <div class="mdl-card__supporting-text">  
-              <p class="vote-card-text vote-share-align" data-i18n="Spread the word, so others can register, too:">Spread the word, so others can register, too:</p>
+              <p><span class="vote-card-text" data-i18n="Are you stuck or">Are you stuck or don't know what to do? Reach out to us! This is a volunteer site, but we will try to help you sign up on the electoral list.</span></p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a href="mailto:support@votefrance.eu?subject=Help with registering for the European elections" target="_blank" class="mdl-button mdl-js-button mdl-button--raised" data-i18n="Contact us">Contact us</a>
+            </div>
+          </div>
+
+          <div class="vote-card mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text" data-i18n="6. How can you help?">6. How can you help?</h2>
+            </div>
+            <div class="mdl-card__supporting-text">  
+              <p class="vote-card-text" ><span data-i18n="After your registration is completed">After your registration is completed, you will receive your</span>&nbsp;<b><span data-i18n="Electoral card">Electoral card</span></b>.&nbsp;<span data-i18n="Spread the message in your network">. Spread the message in your network and ask them to register aswell. Every vote will count!</span></p>
+              <p class="vote-card-text" data-i18n="If you want to share this site">If you want to share this site or a photo of your electoral card (use hashtags #votefrance #UnVotePourlEurope), you can use:</p>
               <form name="vote-share-facebook" class="vote-share-align">
                 <button type="submit" class="mdl-button vote-share-button">
                   <i class="fab fa-facebook"></i>
@@ -299,27 +490,32 @@
                   <i class="fab fa-twitter"></i>
                 </button>
               </form>
+              <form name="vote-share-linkedin" class="vote-share-align">
+                <button type="submit" class="mdl-button vote-share-button">
+                  <i class="fab fa-linkedin"></i>
+                </button>
+              </form>
             </div>
           </div>
-
         </div>
+
         <div class="vote-footer">
           <div class="vote-credits">
-            <span class="" data-i18n="© 2019 - Created by">© 2019 - Created by</span>&nbsp;
-            <a class="vote-credits-link" href="https://www.voltfrance.org" title="Volt France | Redonnons confiance en la politique"><img class="vote-publisher" src="img/volt.min.png" alt="Volt France" /></a>
+            <span class="" data-i18n="© 2023 - Created by">© 2023 - Created by</span>&nbsp;
+            <a class="vote-credits-link" href="https://www.voltfrance.org" title="Volt France | l'Avenir - Made in Europe"><img class="vote-publisher" src="img/volt.min.png" alt="Volt France" /></a>
             <span class="">,</span>&nbsp;
             <span class="" data-i18n="hosted by">hosted by</span>&nbsp;
-            <a class="vote-credits-link" href="https://github.com/VoltEuropa/VoteFrance">Github</a>
+            <a class="vote-credits-link" href="https://github.com/frequent/VoteFrance/">Github</a>
             <span class="">.</span>&nbsp;
             <span class="" data-i18n="Icon inspired by">Icon inspired by</span>&nbsp;
             <a class="vote-credits-link" href="https://thenounproject.com/search/?q=vote&i=52105">Desbenoit</a>&nbsp;
             <span class="" data-i18n="from">from</span>&nbsp;
-            <a class="vote-credits-link" href="https://nounproject.com/" title="Nounproject">the Nounproject</a>
+            <a class="vote-credits-link" href="https://nounproject.com/" title="Nounproject"><svg title="Noun Project home" width="84" height="23" viewBox="0 0 84 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M50.8421 4.55325L46.8133 0.483887L39.7895 7.56844L32.6983 0.483887L28.7368 4.55325L35.755 11.5698L28.7368 18.592L32.6983 22.6557L39.7895 15.5711L46.8133 22.6557L50.8421 18.592L43.8239 11.5698L50.8421 4.55325ZM20.0445 17.9056C23.5054 12.8967 22.2627 6.02212 17.2688 2.55081C12.275 -0.920494 5.42106 0.325967 1.96017 5.33486C-1.50072 10.3438 -0.257997 17.2183 4.73587 20.6896C9.72973 24.1609 16.5837 22.9145 20.0445 17.9056ZM84 0.483887H61.8947V22.6557H84V0.483887Z" fill="#FFFFFF"></path><mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="84" height="23"><path fill-rule="evenodd" clip-rule="evenodd" d="M50.8421 4.55325L46.8133 0.483887L39.7895 7.56844L32.6983 0.483887L28.7368 4.55325L35.755 11.5698L28.7368 18.592L32.6983 22.6557L39.7895 15.5711L46.8133 22.6557L50.8421 18.592L43.8239 11.5698L50.8421 4.55325ZM20.0445 17.9056C23.5054 12.8967 22.2627 6.02212 17.2688 2.55081C12.275 -0.920494 5.42106 0.325967 1.96017 5.33486C-1.50072 10.3438 -0.257997 17.2183 4.73587 20.6896C9.72973 24.1609 16.5837 22.9145 20.0445 17.9056ZM84 0.483887H61.8947V22.6557H84V0.483887Z" fill="#FFFFFF"></path></mask><g mask="url(#mask0)"></g></svg></a>
             <span class="">.</span>&nbsp;
-            <span class="" data-i18n="Banner image by John Towner from">Banner image by John Towner from</span>&nbsp;
-            <a class="vote-credits-link" href="https://www.unsplash.com">unsplash.com</a>
+            <span class="" data-i18n="Banner image © ALAIN JOCARD / AFP">Banner image © ALAIN JOCARD / AFP</span>
           </div>
         </div>
+
       </main>
     </div>
 

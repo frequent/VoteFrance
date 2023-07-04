@@ -1,39 +1,40 @@
 /*jslint nomen: true, indent: 2, maxlen: 80 */
-/*global window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query */
-(function (window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query) {
+/*global window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query, JSON */
+(function (window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query, JSON) {
     "use strict";
 
   /////////////////////////////
   // parameters
   /////////////////////////////
   var STR = "";
+  var PLACEHOLDER = "-";
   var ACTIVE = "is-active";
   var KLASS = rJS(window);
   var CANVAS = "canvas";
   var ARR = [];
   var BLANK = "_blank";
   var NAME = "name";
-  var DATA_SET = "annuaire-des-mairies-france-entiere";
+  var DATA_SET = "annuaire-de-ladministration-base-de-donnees-locales";
   var VOTE = "vote_jio";
   var ODS = "ods_jio";
   var DIALOG_ACTIVE = "vote-dialog-active";
   var LOCATION = window.location;
   var DOCUMENT = window.document;
-  var FILENAME = "voter_registration_reminder";
+  var FILENAME = "Please-register-to-vote.ics";
   var INTERSECTION_OBSERVER = window.IntersectionObserver;
   var TEMPLATE_PARSER = /\{([^{}]*)\}/g;
   var DEFAULT_REMINDER = "Reminder: Register for Eurpean Elections.";
-  var DEFAULT_DATE = "03/25/2019 09:00:00 AM GMT+0100";
+  var DEFAULT_DATE = "04/28/2024 09:00:00 AM GMT+0100";
   var POPPER = "width=600,height=480,resizable=yes,scrollbars=yes,status=yes";
-  var LANG = "https://raw.githubusercontent.com/VoltEuropa/VoteFrance/master/lang/";
-  var DEADLINE = "03/31/2019 6:00:00 PM GMT+0100";
+  var LANG = "https://raw.githubusercontent.com/frequent/VoteFrance/master/lang/";
+  var DEADLINE = "05/05/2024 6:00:00 PM GMT+0100";
   var SEARCHING = "searching";
+  var SUMMARY = "Every vote will count in the 2024 European Elections. Including yours. Sign up on the electoral list for Europeans.";
   var SOCIAL_MEDIA_CONFIG = {
     "facebook": "https://www.facebook.com/sharer.php?u={url}",
-    "twitter": "https://twitter.com/intent/tweet?url={url}&text={text}&hashtags={tag_list}"
+    "twitter": "https://twitter.com/intent/tweet?url={url}&text={summary}&hashtags={tag_list}",
+    "linkedin": "https://www.linkedin.com/sharing/share-offsite/?url={url}&mini=true&source={source}"
   };
-
-  
 
   /////////////////////////////
   // methods
@@ -120,8 +121,8 @@
     return {
       "type": "vote_storage",
       "repo": "VoteFrance",
-      "path": "lang/" + my_language
-      //"__debug": "https://softinst103163.host.vifib.net/vote/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language,
+      "__debug": "https://softinst56756.host.vifib.net/public/project/VoteFrance/lang/" + my_language + "/debug.json"
     };
   }
 
@@ -136,6 +137,13 @@
     return new SimpleQuery({"key": my_key, "value": my_val, "type": "simple"});
   }
 
+  function decomposeAdresse(my_adress) {
+   if (my_adress.startsWith('[')) {
+     return JSON.parse(my_adress).join("\n\r");
+   } else {
+     return my_adress;
+   }
+  }
 
   KLASS
 
@@ -146,7 +154,8 @@
       "locale": getLang(window.navigator).substring(0, 2) || "en",
       "online": null,
       "sw_errors": 0,
-      "is_searching": false
+      "is_searching": false,
+      "next_page_token": 0
     })
 
     /////////////////////////////
@@ -159,6 +168,7 @@
         "search_result_container": getElem(element, ".vote-search-results"),
         "dialog": getElem(gadget.element, ".vote-dialog"),
         "dialog_content": getElem(gadget.element, ".vote-dialog-content"),
+        "total_results": getElem(gadget.element, ".vote-total_results"),
 
         // yaya, should be localstorage caling repair to sync
         "url_dict": {},
@@ -254,6 +264,7 @@
       var dict = gadget.property_dict;
       var state = gadget.state;
       var search_input = dict.search_input.value;
+
       if (search_input.length < 4) {
         return;
       }
@@ -261,9 +272,27 @@
         state.is_searching = false;
       }
       gadget.state.is_searching = true;
+
       return new RSVP.Queue()
         .push(function () {
-          var query = setQuery("q", search_input);
+          var query;
+          if (my_start_index) {
+            query = {
+              type: "complex",
+              operator: "AND",
+              query_list: [{
+                type: "simple",
+                key: "q",
+                value: search_input+" Mairie"
+              }, {
+                type: "simple",
+                key: "token",
+                value: my_start_index + 1
+              }]
+            };
+          } else {
+            query = setQuery("q", search_input+" Mairie");
+          }
           return RSVP.all([
             gadget.ods_allDocs({"query": Query.objectToSearchText(query)}),
             gadget.enterSearch()
@@ -271,6 +300,7 @@
         })
         .push(function (my_response_list) {
           var response = my_response_list[0];
+          var total = response.data.rows.nhits;
           var item;
           var i;
           dict.search_list = [];
@@ -279,9 +309,10 @@
             item.fields.id = item.recordid;
             dict.search_list.push(item.fields);
           }
-          gadget.state.total_results = response.nhits;
-          if (response.nhits > 10) {
-            gadget.state.next_page_token = dict.search_length + 1;
+          gadget.state.total_results = total;
+          if (total > 10) {
+            dict.total_results.textContent = "(" + total + ")";
+            gadget.state.next_page_token += response.data.total_rows;
           }
           return gadget.buildResultList();
         })
@@ -302,7 +333,7 @@
         response += getTemplate(KLASS, "result_list_template").supplant({
           "id": item.id,
           "nom": item.nom,
-          "adresse": item.adresse //.replace("<br/>", "")
+          "adresse": item.adresse_codepostal + " " + item.adresse_nomcommune
         });
       });
       if (response !== STR) {
@@ -330,8 +361,9 @@
       popup = window.open(
         SOCIAL_MEDIA_CONFIG[my_scm].supplant({
           "url": window.encodeURIComponent(LOCATION.href),
-          "text":"",
-          "tag_list": "ep2019,euelections2019,thistimeivote"
+          "summary": SUMMARY,
+          "source":"votefrance.eu",
+          "tag_list": "votefrance,unvotepourleurope,europeennes2024,europeennes"
         }),
         is_mobile.matches ? BLANK : STR,
         is_mobile.matches ? null : POPPER
@@ -344,14 +376,13 @@
       var gadget = this;
       var cal = ics();
       var description = STR;
-      var subject = my_target.vote_remind_title;
+      var subject = my_target.vote_remind_subject;
       var begin = my_target.vote_remind_date;
       var location = my_target.vote_remind_location;
-
       cal.addEvent(
         subject ? subject.value : DEFAULT_REMINDER,
         description,
-        location && gadget.state.location ? gadget.state.location.replace("<br />", "") : STR,
+        (location && (location.checked && gadget.state.location)) ? gadget.state.location.replace(/[\r\n]+/g, " ") : STR,
         begin ? begin.value : DEFAULT_DATE,
         DEADLINE
       );
@@ -476,12 +507,14 @@
         .push(function (my_data) {
           var response = STR;
           response += getTemplate(KLASS, "result_detail_template").supplant({
-            "adresse": my_data.adresse,
+            "adresse": decomposeAdresse(my_data.adresse_ligne) + "\r\n" + my_data.adresse_codepostal + " " + my_data.adresse_nomcommune,
             "name": my_data.nom,
-            "mail": my_data.mail,
-            "site": my_data.site,
-            "tel": my_data.tel_affichage,
-            "fax": my_data.tel_affichage
+            "mail": my_data.coordonneesnum_email || PLACEHOLDER,
+            "site": my_data.coordonneesnum_url  || PLACEHOLDER,
+            "tel": my_data.tel_affichage || PLACEHOLDER,
+            "fax": my_data.tel_affichage || PLACEHOLDER,
+            "lat": my_data.coordonnees[0],
+            "lng": my_data.coordonnees[1]
           });
           setDom(dict.dialog_content, response, true);
           window.componentHandler.upgradeElements(dict.dialog_content);
@@ -566,6 +599,8 @@
           return this.createIcsFile(event.target);
         case "vote-search-mairie":
           return this.runSearch();
+        case "vote-load-more":
+          return this.runSearch(this.state.next_page_token);
         case "vote-result-details":
           return this.showDialog(event);
         case "vote-dialog-close":
@@ -573,6 +608,7 @@
         case "vote-clear-list":
           this.property_dict.search_list = [];
           purgeDom(this.property_dict.search_result_container);
+          purgeDom(this.property_dict.total_results);
           break;
         case "volt-store-location":
           this.state.location = event.target.vote_location.value;
@@ -581,4 +617,4 @@
     });
 
 
-}(window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query));
+}(window, rJS, RSVP, Math, Date, ics, saveAs, SimpleQuery, Query, JSON));
