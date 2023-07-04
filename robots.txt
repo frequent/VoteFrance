@@ -1,3 +1,3 @@
 User-agent:*
 Disallow:
-Sitemap: https://www.voltcalendar.eu/sitemap.xml
+Sitemap: https://www.votefrance.eu/sitemap.xml

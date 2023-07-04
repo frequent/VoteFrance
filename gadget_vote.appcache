@@ -1,17 +1,17 @@
 CACHE MANIFEST
-# generated on Sat, 11 Nov 2018 20:58:10 -0400
+# generated on Tue, 04 Jul 2023 12:00:00 -0200
 
 CACHE:
 # foreign
+font/fa-brands-400.eot
+font/fa-brands-400.ttf
+font/fa-brands-400.woff
+font/fa-brands-400.woff2
 font/MaterialIcons-Regular.eot
 font/MaterialIcons-Regular.svg
 font/MaterialIcons-Regular.ttf
 font/MaterialIcons-Regular.woff
 font/MaterialIcons-Regular.woff2
-font/fa-brands-400.eot
-font/fa-brands-400.ttf
-font/fa-brands-400.woff
-font/fa-brands-400.woff2
 font/sourcesanspro-bold-webfont.eot
 font/sourcesanspro-bold-webfont.ttf
 font/sourcesanspro-bold-webfont.woff
@@ -21,7 +21,9 @@ font/sourcesanspro-regular-webfont.ttf
 font/sourcesanspro-regular-webfont.woff
 font/sourcesanspro-regular-webfont.woff2
 img/flags.min.png
-img/john-towner-125993-unsplash-min.png
+img/FR-Image-Vision-of-Europe.jpg
+img/GitHub_Logo_White.png
+img/volt.min.png
 img/vote_france_192x192-min.png
 img/vote_france_256x256-min.png
 img/vote_france_512x512-min.png
@@ -38,8 +40,9 @@ resources/example_justicatif-de-domicile.png
 rsvp.latest.min.js
 renderjs.latest.min.js
 jio.latest.min.js
-jio.latest.js
-gadget_global.js
+gadget_global.min.js
+gadget_jio.html
+gadget_jio.min.js
 gadget_vote.js
 gadget_vote.html
 gadget_vote.css
