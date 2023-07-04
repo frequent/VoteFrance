@@ -715,6 +715,10 @@
 #vote-open-menu + .mdl-menu__container .mdl-menu__outline.mdl-menu--bottom-right {
   width: 100% !important;
 }
+.vote-disabled {
+  opacity: .25;
+  pointer-events: none;
+}
 .vote-select-language .mdl-menu__container {
   background: #fff;
 }
