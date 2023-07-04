@@ -112,6 +112,12 @@
 .fa-twitter-square:before{
     content:"\f081"
 }
+.fa-linkedin:before{
+    content:"\f0e1"
+}
+.fa-linkedin-square:before{
+    content:"\f08c"
+}
 
 /* ============================= THEMEING =================================== */
 /* https://coolors.co/0055a4-ef4135-ffffff-f5e3e0-e8b4bc */
@@ -155,13 +161,7 @@
 .vote-header-button {
   color: #2C4251;
 }
-.vote-language-menu .mdl-button {
-  font-family: source_sans_proregular;
-  text-decoration: none;
-  text-transform: none;
-  font-size: 1.25em;
-  margin-left: .5em;
-}    
+
 @media only screen and (max-width: 32em) {
   .vote-site-header {
     position: absolute !important;
@@ -181,7 +181,7 @@
   display: none;
 }
 .vote-background {
-  background-image: url("img/john-towner-125993-unsplash-min.png");
+  background-image: url("img/FR-Image-Vision-of-Europe.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -200,6 +200,21 @@
     margin: 1em auto 1em;
   }
 }
+.vote-content-election-wrapper {
+  font-family: source_sans_proregular, arial, sans-serif;
+  color: #2C4251;
+  background: rgba(238,293,246,.8);
+}
+.vote-content-election-title {
+  font-family: source_sans_probold, arial, sans-serif;
+}
+.vote-content-election-title {
+  display: block;
+  padding-bottom: .25em;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
 .vote-content-timer-wrapper {
   font-family: source_sans_proregular, arial, sans-serif;
   color: #2C4251;
@@ -273,6 +288,12 @@
     margin: 0 5% 0;
     width: auto
   }
+  .vote-content-election-title {
+    font-size: 2em;
+    line-height: 1em;
+    padding: 0.25em 0;
+    box-sizing: border-box;
+  }
   .vote-content-timer-title {
     line-height: 1em;
     margin-left: .25em;
@@ -289,8 +310,10 @@
     font-size: 1em;
   }
   .vote-background {
-    background-image: url("img/john-towner-125993-unsplash-640-min.png");
-    background-size: contain;
+    background-image: url("img/FR-Image-Vision-of-Europe.jpg");
+    /* background-size: contain; */
+    background-size: cover;
+    background-position: center;
   }
   .vote-timer-large {
     display: none;
@@ -326,6 +349,10 @@
   .vote-site-header-appendix {
     display: none;
   }
+  .vote-background {
+    background-size: contain;
+    background-position: unset;
+  }
   .vote-background .vote-logo {
     max-width: 10em;
   } 
@@ -354,6 +381,11 @@
   margin: 0 auto;
   text-align: center;
   color: rgb(255,255,255);
+}
+.vote-credits span,
+.vote-credits a, 
+.vote-site-header span {
+  vertical-align: middle;
 }
 .vote-credits-link {
   color: rgb(255,255,255);
@@ -496,16 +528,31 @@
   font-size: 32px;
   text-align: center;
   padding-top: 4px;
+  min-width: 40px;
 }
-.vote-clear-form {
-  float: right;
-  text-align: right;
-  padding: 1.25em 0;
+.vote-action-form {
+  display: inline-block;
   vertical-align: middle;
+  margin-right: .5em;
 }
 @media only screen and (max-width: 32em) {
-  .vote-clear-form {
-    margin-top: 0;
+  .vote-action-form {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+  .vote-action-form .vote-submit-button,
+  .mdl-card__actions.mdl-card--border a.mdl-button {
+    width: 100%;
+    padding: 0;
+  }
+  .mdl-card__actions.mdl-card--border {
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  .vote-action-form-last,
+  .vote-button-last {
+    margin-top: 7px;
   }
 }
 .vote-mairie-form {
@@ -620,12 +667,16 @@
 }
 .vote-card-dialog .vote-card-mini-text {
   font-size: .7em;
-  display: block;
+  min-width: 5em;
+  text-align: center;
 }
 .vote-card-list {
-  display: inline-block;
-  vertical-align: top;
-  width: 49%;
+  margin: 0;
+  padding: 0;
+}
+.vote-card-list .mdl-list__item {
+  padding: 0;
+  margin: 0.25em 0;
 }
 
 @media only screen and (max-width: 48em) {
@@ -644,16 +695,51 @@
   height: 84px;
 }
 .vote-card-list .mdl-list__item-avatar, .mdl-list__item-avatar.material-icons.vote-list-icon {
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
+  background-color: #2C4251;
 }
 .vote-publisher {
   max-width: 3em;
   margin-top: -5px;
 }
+.vote-hoster {
+  height: 2.25em;
+}
 /* ========================== TRANSLATION =================================== */
 /* https://www.flag-sprites.com/ select flags, check network tab for image */
+
+/* override mdl-menu */
+#vote-open-menu + .mdl-menu__container {
+  width: 80% !important;
+}
+#vote-open-menu + .mdl-menu__container .mdl-menu__outline.mdl-menu--bottom-right {
+  width: 100% !important;
+}
 .vote-select-language .mdl-menu__container {
   background: #fff;
+}
+.vote-language-menu {
+  width: 100% !important;
+  column-count: 1;
+}
+.vote-language-menu .mdl-menu__item {
+  width: 22% !important;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.vote-language-menu .mdl-button {
+  font-family: source_sans_proregular;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.25em;
+  width: 100%;
+  box-sizing: content-box;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 48px;
 }
 .vote-lang {
   background: url(img/flags.min.png) no-repeat;
@@ -665,24 +751,102 @@
   display: block;
 }
 
-.vote-lang_en {
-  background-position: -32px -64px;
+.vote-lang_at {
+  background-position: -96px 0px;
 }
-.vote-lang_pl {
-  background-position: -160px -128px;
+.vote-lang_be {
+  background-position: -160px 0px;
 }
-.vote-lang_de {
-  background-position: -64px -32px;
+.vote-lang_bg {
+  background-position: -192px 0px;
 }
-.vote-lang_fr {
-  background-position: 0 -64px;
+.vote-lang_hr {
+  background-position: -96px -64px;
 }
-.vote-lang_it {
-  background-position: 0 -96px;
+.vote-lang_cz {
+  background-position: -32px -32px;
 }
-.vote-lang_es {
-  background-position: -160px -32px
+.vote-lang_cy {
+  background-position: -164px -160px;
 }
 .vote-lang_dk {
   background-position: -96px -32px;
 }
+.vote-lang_ee {
+  background-position: -128px -32px;
+}
+.vote-lang_fi {
+  background-position: -192px -32px;
+}
+.vote-lang_fr {
+  background-position: 0 -64px;
+}
+.vote-lang_gr {
+  background-position: -64px -64px;
+}
+.vote-lang_de {
+  background-position: -64px -32px;
+}
+.vote-lang_hu {
+  background-position: -128px -64px;
+}
+.vote-lang_ie {
+  background-position: -160px -64px;
+}
+.vote-lang_it {
+  background-position: 0 -96px;
+}
+.vote-lang_lv {
+  background-position: -128px -96px;
+}
+.vote-lang_lt {
+  background-position: -96px -96px;
+}
+.vote-lang_lu {
+  background-position: 0 -96px;
+}
+.vote-lang_mt {
+  background-position: -64px -128px;
+}
+.vote-lang_nl {
+  background-position: -96px -128px;
+}
+.vote-lang_pl {
+  background-position: -160px -128px;
+}
+.vote-lang_pt {
+  background-position: -192px -128px;
+}
+.vote-lang_ro {
+  background-position: 0px -160px;
+}
+.vote-lang_si {
+  background-position: -96px -160px;
+}
+.vote-lang_sk {
+  background-position: -128px -160px;
+}
+.vote-lang_es {
+  background-position: -160px -32px;
+}
+.vote-lang_se {
+  background-position: -64px -160px;
+}
+.vote-lang_en {
+  background-position: -32px -64px;
+}
+@media only screen and (max-width: 48em) {
+  .vote-language-menu .mdl-button {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    width: 42px;
+    height: 42px;
+  }
+  .vote-lang {
+    position: static;
+    margin: .25em auto;
+  }
+}
+
+

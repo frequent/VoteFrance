@@ -12654,8 +12654,8 @@ return new Parser;
  * 
  **/
 /*jslint indent: 2, nomen: true, maxlen: 120*/
-/*global jIO, RSVP, UriTemplate, JSON, Query */
-(function (jIO, RSVP, UriTemplate, JSON, Query) {
+/*global jIO, RSVP, UriTemplate, JSON, Query, Array */
+(function (jIO, RSVP, UriTemplate, JSON, Query, Array) {
   "use strict";
 
   var ALLDOCS_URL = "https://public.opendatasoft.com/api/records/1.0/search/?" +
@@ -12667,6 +12667,17 @@ return new Parser;
       throw new jIO.util.jIOError("Cannot find document: " + id, 404);
     }
     throw error;
+  }
+  
+  function getValueByKey(queryObject, key) {
+    if (queryObject.query_list && Array.isArray(queryObject.query_list)) {
+      for (const item of queryObject.query_list) {
+        if (item.key === key) {
+          return item.value;
+        }
+      }
+    }
+    return null;
   }
 
   function ODSStorage(spec) {
@@ -12716,20 +12727,19 @@ return new Parser;
       .push(function () {
         var token;
         var search;
-
         if (query.type === "simple") {
           search = query.value;
           token = "";
         } else {
-          search = getValue(query.query_list, "q");
-          token = getValue(query.query_list, "token");
+          search = getValueByKey(query, "q");
+          token = getValueByKey(query, "token");
         }
         return jIO.util.ajax({
           "type": "GET",
           "url": ALLDOCS_TEMPLATE.expand({
             "dataset": data_set,
             "search": search,
-            "start": token
+            "token": token
           })
         });
       })
@@ -12747,5 +12757,5 @@ return new Parser;
 
   jIO.addStorage('ods_storage', ODSStorage);
 
-}(jIO, RSVP, UriTemplate, JSON, Query));
+}(jIO, RSVP, UriTemplate, JSON, Query, Array));
 
