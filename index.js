@@ -8,7 +8,7 @@
   /////////////////////////////
   var OPTION_DICT = {};
   var URL = "https://www.votefrance.eu/";
-  var TITLE = "Deadline to sign up on electoral list for EU elections";
+  var TITLE = "Sign up on the electoral list for the 2024 European Elections";
 
   /////////////////////////////
   // methods
