@@ -121,8 +121,8 @@
     return {
       "type": "vote_storage",
       "repo": "VoteFrance",
-      "path": "lang/" + my_language,
-      "__debug": "https://softinst56756.host.vifib.net/public/project/VoteFrance/lang/" + my_language + "/debug.json"
+      "path": "lang/" + my_language
+      //"__debug": "https://softinst56756.host.vifib.net/public/project/VoteFrance/lang/" + my_language + "/debug.json"
     };
   }
 
