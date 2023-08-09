@@ -98,6 +98,21 @@
 .fa-linkedin-square:before{
     content:"\f08c"
 }
+.fa-instagram:before{
+    content:"\f16d"
+}
+.fa-instagram-square:before{
+    content:"\e055"
+}
+.fa-tiktok:before {
+    content: "\e07b";
+}
+.fa-youtube:before {
+    content: "\f167";
+}
+.fa-twitch:before {
+    content: "\f1e8";
+}
 
 /* ============================= THEMEING =================================== */
 /* https://coolors.co/0055a4-ef4135-ffffff-f5e3e0-e8b4bc */
@@ -141,8 +156,7 @@
 .vote-header-button {
   color: #2C4251;
 }
-
-@media only screen and (max-width: 32em) {
+@media only screen and (max-width: 64em) {
   .vote-site-header {
     position: absolute !important;
   	height: 1px;
@@ -167,6 +181,22 @@
   text-align: center;
   overflow: hidden;
 }
+.vote-background ul {
+  list-style: none;
+  margin: -5em 0 0 0;
+  padding: 0;
+}
+.vote-background ul li {
+  list-style: none;
+  display: inline-block;
+  width: 2em;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 2.5em;
+}
+.vote-background ul li a {
+  color: #ffffff;
+}
 .vote-background .vote-logo {
   margin: 5em auto 5em;
   border-radius: 10em;
@@ -176,6 +206,14 @@
   background: rgba(255,255,255,.5);
 }
 @media only screen and (max-width: 32em) {
+  .vote-background ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .vote-background ul li {
+    font-size: 1.5em;
+  }
   .vote-background .vote-logo {
     margin: 1em auto 1em;
   }
