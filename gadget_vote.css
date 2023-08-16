@@ -763,99 +763,12 @@
   padding: 0;
   height: 48px;
 }
-.vote-lang {
-  background: url(img/flags.min.png) no-repeat;
+/* https://flagicons.lipis.dev/ */
+.vote-language-menu .vote-select-language svg {
   position: absolute;
   width: 32px;
-  height: 32px;
-  top: .5em;
-  left: .25em;
-  display: block;
-}
-
-.vote-lang_at {
-  background-position: -96px 0px;
-}
-.vote-lang_be {
-  background-position: -160px 0px;
-}
-.vote-lang_bg {
-  background-position: -192px 0px;
-}
-.vote-lang_hr {
-  background-position: -96px -64px;
-}
-.vote-lang_cz {
-  background-position: -32px -32px;
-}
-.vote-lang_cy {
-  background-position: -164px -160px;
-}
-.vote-lang_dk {
-  background-position: -96px -32px;
-}
-.vote-lang_ee {
-  background-position: -128px -32px;
-}
-.vote-lang_fi {
-  background-position: -192px -32px;
-}
-.vote-lang_fr {
-  background-position: 0 -64px;
-}
-.vote-lang_gr {
-  background-position: -64px -64px;
-}
-.vote-lang_de {
-  background-position: -64px -32px;
-}
-.vote-lang_hu {
-  background-position: -128px -64px;
-}
-.vote-lang_ie {
-  background-position: -160px -64px;
-}
-.vote-lang_it {
-  background-position: 0 -96px;
-}
-.vote-lang_lv {
-  background-position: -128px -96px;
-}
-.vote-lang_lt {
-  background-position: -96px -96px;
-}
-.vote-lang_lu {
-  background-position: 0 -96px;
-}
-.vote-lang_mt {
-  background-position: -64px -128px;
-}
-.vote-lang_nl {
-  background-position: -96px -128px;
-}
-.vote-lang_pl {
-  background-position: -160px -128px;
-}
-.vote-lang_pt {
-  background-position: -192px -128px;
-}
-.vote-lang_ro {
-  background-position: 0px -160px;
-}
-.vote-lang_si {
-  background-position: -96px -160px;
-}
-.vote-lang_sk {
-  background-position: -128px -160px;
-}
-.vote-lang_es {
-  background-position: -160px -32px;
-}
-.vote-lang_se {
-  background-position: -64px -160px;
-}
-.vote-lang_en {
-  background-position: -32px -64px;
+  top: 12px;
+  left: 4px;
 }
 @media only screen and (max-width: 48em) {
   .vote-language-menu .mdl-button {
