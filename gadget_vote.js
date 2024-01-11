@@ -39,7 +39,55 @@
   /////////////////////////////
   // methods
   /////////////////////////////
-  function launchCountdown(my_end_date, my_element) {
+  // thanks for nothing ChatGPT
+  function getCroatianTimeForm(number, unit) {
+    function belongsToOneOfThreeGroups(num) {
+      return (num % 10 === 1 && num !== 11) ||
+             (num % 10 >= 2 && num % 10 <= 4 && (num < 12 || num > 14));
+    }
+  
+    function getForm(num, unit) {
+      if (unit === 'seconds' || unit === 'second') {
+        if (num === 1) {
+          return 'sekunda';
+        } else if (belongsToOneOfThreeGroups(num)) {
+          return 'sekunde';
+        } else {
+          return 'sekundi';
+        }
+      } else if (unit === 'minutes' || unit === 'minute') {
+        if (num === 1) {
+          return 'minuta';
+        } else if (belongsToOneOfThreeGroups(num)) {
+          return 'minute';
+        } else {
+          return 'minuta';
+        }
+      } else if (unit === 'hours' || unit === 'hour') {
+        if (num === 1) {
+          return 'sat';
+        } else if (belongsToOneOfThreeGroups(num)) {
+          return 'sata';
+        } else {
+          return 'sati';
+        }
+      } else if (unit === 'days' || unit === 'day') {
+        if (num === 1) {
+          return 'dan';
+        } else if (belongsToOneOfThreeGroups(num)) {
+          return 'dana';
+        } else {
+          return 'dani';
+        }
+      } else {
+        return 'Invalid time unit';
+      }
+    }
+  
+    return getForm(number, unit);
+  }
+
+  function launchCountdown(my_end_date, my_element, my_state) {
     var days;
     var hours;
     var minutes;
@@ -62,6 +110,13 @@
         time_remaining = (time_remaining % 60);
         seconds = parseInt(time_remaining, 10);
 
+        // sonderlocking for Croatian :)
+        if (my_state.locale === "hr") {
+         getElem(my_element, "[data-i18n='days']").textContent = getCroatianTimeForm(days, "days");
+         getElem(my_element, "[data-i18n='hours']").textContent = getCroatianTimeForm(days, "hours");
+         getElem(my_element, "[data-i18n='minutes']").textContent = getCroatianTimeForm(days, "minutes");
+         getElem(my_element, "[data-i18n='seconds']").textContent = getCroatianTimeForm(seconds, "seconds");
+        }
         getElem(my_element, ".days").textContent = parseInt(days, 10);
         getElem(my_element, ".hours").textContent = ("0" + hours).slice(-2);
         getElem(my_element, ".minutes").textContent = ("0" + minutes).slice(-2);
@@ -466,7 +521,7 @@
       mergeDict(dict, my_option_dict);
       return new RSVP.Queue()
         .push(function () {
-          launchCountdown(DEADLINE, gadget.element);
+          launchCountdown(DEADLINE, gadget.element, gadget.state);
           return RSVP.all([
             gadget.vote_create(getVoteConfig(gadget.state.locale)),
             gadget.ods_create(getOdsConfig(DATA_SET))
